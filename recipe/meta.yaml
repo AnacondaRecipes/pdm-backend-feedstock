@@ -31,6 +31,8 @@ test:
   source_files:
     - tests/
   requires:
+    - {{ compiler('c') }}
+    - git
     - editables
     - pip
     - pytest
