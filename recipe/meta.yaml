@@ -28,10 +28,15 @@ requirements:
 test:
   imports:
     - pdm.backend
+  source_files:
+    - tests/
   requires:
+    - editables
     - pip
+    - pytest
   commands:
     - pip check
+    - pytest tests -vv
 
 about:
   home: https://pdm-backend.fming.dev/
