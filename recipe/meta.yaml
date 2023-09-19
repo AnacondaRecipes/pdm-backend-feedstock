@@ -22,8 +22,6 @@ requirements:
     # importlib-metadata is required in base.py, 
     # see https://github.com/pdm-project/pdm-backend/blob/main/src/pdm/backend/base.py#L25
     - importlib-metadata >=3.6  # [py<310]
-    - setuptools
-    - wheel
   run:
     - python
     - importlib-metadata >=3.6  # [py<310]
