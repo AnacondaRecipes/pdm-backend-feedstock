@@ -31,11 +31,12 @@ test:
   source_files:
     - tests/
   requires:
-    - {{ compiler('c') }}
-    - git
+    - {{ compiler('c') }}  # [linux or win]
+    - git                  # [linux or win]
     - editables
     - pip
     - pytest
+    - pytest-xdist
   commands:
     - pip check
     - pytest tests -vv
