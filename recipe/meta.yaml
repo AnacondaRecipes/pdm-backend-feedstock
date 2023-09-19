@@ -19,8 +19,7 @@ requirements:
   host:
     - pip
     - python
-    # importlib-metadata is required in base.py, 
-    # see https://github.com/pdm-project/pdm-backend/blob/main/src/pdm/backend/base.py#L25
+    # "pdb-backend" bootstraps itself using its own code, so we need to have the runtime dependencies at build time
     - importlib-metadata >=3.6  # [py<310]
   run:
     - python
