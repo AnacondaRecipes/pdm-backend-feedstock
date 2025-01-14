@@ -1,5 +1,5 @@
 {% set name = "pdm-backend" %}
-{% set version = "2.1.6" %}
+{% set version = "2.4.3" %}
 
 
 package:
@@ -8,18 +8,18 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdm_backend-{{ version }}.tar.gz
-  sha256: 75cdee279ce99df3ce9c53c5c81e3cc1cd3f9fa901eeb14d2bc88ab770daf92d
+  sha256: dbd9047a7ac10d11a5227e97163b617ad5d665050476ff63867d971758200728
 
 build:
   number: 0
-  skip: true  # [py<37]
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
     - pip
     - python
-    # "pdb-backend" bootstraps itself using its own code, so we need to have the runtime dependencies at build time
+    # "pdm-backend" bootstraps itself using its own code, so we need to have the runtime dependencies at build time
     - importlib-metadata >=3.6  # [py<310]
   run:
     - python
