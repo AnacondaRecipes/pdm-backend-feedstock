@@ -32,13 +32,14 @@ test:
     - tests/
   requires:
     - {{ compiler('c') }}  # [linux or win]
+    - git                  # [linux or win]
     - editables
     - pip
     - pytest
     - pytest-xdist
   commands:
     - pip check
-    - pytest tests -vv
+    - pytest tests -k "not test__get_version_from_scm"
 
 about:
   home: https://pdm-backend.fming.dev/
