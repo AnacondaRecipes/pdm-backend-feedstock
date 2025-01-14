@@ -32,7 +32,6 @@ test:
     - tests/
   requires:
     - {{ compiler('c') }}  # [linux or win]
-    - git                  # [linux or win]
     - editables
     - pip
     - pytest
