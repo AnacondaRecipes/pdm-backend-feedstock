@@ -8,8 +8,8 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pdm_backend-{{ version }}.tar.gz
   sha256: 5dd9cd581a4f18d57ff506a5b3aad7c8df31e5949b6fd854bbc34c38107e4532
-  patches: # [linux]
-    - fix_git_for_tests.patch # [linux]
+  patches:
+    - fix_git_for_tests.patch
 
 build:
   number: 0
