@@ -1,0 +1,13 @@
+diff --git a/tests/conftest.py b/tests/conftest.py
+index 9cd3daa..aa6d30c 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -23,6 +23,8 @@ def dist(tmp_path: Path) -> Path:
+ @pytest.fixture
+ def scm(fixture_project: Path) -> None:
+     subprocess.check_call(["git", "init"])
++    subprocess.check_call(["git", "config", "user.email", "test@example.com"])
++    subprocess.check_call(["git", "config", "user.name", "Test User"])
+     subprocess.check_call(["git", "add", "."])
+     subprocess.check_call(["git", "commit", "-m", "initial commit"])
+     subprocess.check_call(["git", "tag", "-a", "0.1.0", "-m", "version 0.1.0"])
